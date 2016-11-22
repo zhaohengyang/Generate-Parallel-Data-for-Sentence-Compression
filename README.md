@@ -7,3 +7,23 @@ There is a lack of paralled data set resource for sentence reduction. One could 
 ## Description
 
 This is a python project that generate original sentence / reduction sentence pair. 
+
+## Output
+
+Usage demostration and visualization are in demo.ipynb file
+
+## Example
+
+### Input sentence / headline pair
+
+-------- Sentence -------------------
+The Bombay high court on Tuesday directed the BEST staff, including drivers and conductors, to call off their strike and report to work immediately.
+-------- Headline -------------------
+Bombay high court directs BEST staff to call off strike & report to work
+
+### Output sentence / reduced_sentence pair
+
+-------- Sentence -------------------
+The Bombay high court on Tuesday directed the BEST staff, including drivers and conductors, to call off their strike and report to work immediately.
+-------- reduced_sentence -------------------
+The Bombay high court directed the BEST staff , to call off their strike and report to work immediately
