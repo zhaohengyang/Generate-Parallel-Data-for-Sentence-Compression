@@ -528,8 +528,8 @@ class Sentence_Reduction(object):
         # Keep node that has headline stem
         self.reduced_tree.tree[:] = [node for node in self.reduced_tree.tree if check_common_and_update(node)]
 
-        if headline_stems:
-            print("{} -- Found unmatched headlines: {}".format(self.reduce_sentence_by_headline.__name__, headline_stems))
+        # if headline_stems:
+        #     print("{} -- Found unmatched headlines: {}".format(self.reduce_sentence_by_headline.__name__, headline_stems))
 
 
         # Return each part of the flatten tree, use different color to print graph

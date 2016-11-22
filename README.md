@@ -18,18 +18,20 @@ Usage demostration and visualization are in demo.ipynb file
 
 -------- Sentence -------------------
 
-The Bombay high court on Tuesday directed the BEST staff, including drivers and conductors, to call off their strike and report to work immediately.
+Pakistan said on Thursday it has decided to resume cross-border trade in Kashmir after weeks of suspension over the arrest of a Pakistani driver by the Indian authorities on drugs smuggling charges.
 
 -------- Headline -------------------
 
-Bombay high court directs BEST staff to call off strike & report to work
+Pakistan to resume cross-border trade in Kashmir
 
 ### Output sentence / reduced_sentence pair
 
 -------- Sentence -------------------
 
-The Bombay high court on Tuesday directed the BEST staff, including drivers and conductors, to call off their strike and report to work immediately.
+Pakistan said on Thursday it has decided to resume cross-border trade in Kashmir after weeks of suspension over the arrest of a Pakistani driver by the Indian authorities on drugs smuggling charges.
 
--------- reduced_sentence -------------------
+-------- Reduced_sentence -------------------
 
-The Bombay high court directed the BEST staff , to call off their strike and report to work immediately
+Pakistan has decided to resume cross - border trade in Kashmir
+
+

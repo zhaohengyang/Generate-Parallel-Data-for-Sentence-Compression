@@ -29,8 +29,8 @@
       <file leaf-file-name="parallel_data_gen.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/python/parallel_data_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="601" column="18" selection-start-line="601" selection-start-column="18" selection-end-line="601" selection-end-column="18" />
+            <state relative-caret-position="685">
+              <caret line="532" column="0" selection-start-line="532" selection-start-column="0" selection-end-line="532" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -361,8 +361,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/python/parallel_data_gen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="601" column="18" selection-start-line="601" selection-start-column="18" selection-end-line="601" selection-end-column="18" />
+        <state relative-caret-position="685">
+          <caret line="532" column="0" selection-start-line="532" selection-start-column="0" selection-end-line="532" selection-end-column="0" />
           <folding />
         </state>
       </provider>
