@@ -34,4 +34,4 @@ Pakistan said on Thursday it has decided to resume cross-border trade in Kashmir
 
 Pakistan has decided to resume cross - border trade in Kashmir
 
-
+![alt tag](https://github.com/zhaohengyang/Generate-Parallel-Data-for-Sentence-Compression/reduction_tree)
