@@ -7,6 +7,17 @@ import numpy as np
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 
+
+import spacy
+from spacy.en import English
+from spacy.tokens.span import Span
+nlp = English()
+import copy
+from nltk.stem.porter import PorterStemmer
+
+from spacy.attrs import ORTH, DEP, HEAD
+
+
 merge_rules = {"group1": ["aux", "auxpass", "det", "nummod", "case",
                           "prt", "poss", "of", "nmod", "compound",
                           "neg", "xcomp", "quantmod", "advmod", "attr",
@@ -27,7 +38,6 @@ def plot_im(im, dpi=80):
     py,px,_ = im.shape # depending of your matplotlib.rc you may have to use py,px instead
     size = (py/np.float(dpi), px/np.float(dpi)) # note the np.float()
 
-    print("size:",size)
     fig = plt.figure(figsize=size, dpi=dpi)
     # fig = plt.figure(figsize=(10,20), dpi=dpi)
     ax = fig.add_axes([0, 0, 1, 1])
@@ -142,7 +152,6 @@ class Tree_node():
 
 
 
-# todo consider ""
 class Parsed_Tree():
     '''
     Manage and maintain an Tree
@@ -433,7 +442,7 @@ class Sentence_Reduction(object):
         # -- move conjunction word
         for node in self.transfered_tree.tree:
             if node.edge_label() in merge_rules['group2']:
-                print("Found cc node: node label: {:<20}  id: {:<20} form: {:<20}".format(node.edge_label(), node.id(), node.form()))
+                # print("Found cc node: node label: {:<20}  id: {:<20} form: {:<20}".format(node.edge_label(), node.id(), node.form()))
                 _, right_neighbor = self.transfered_tree.find_neighbor(node)
                 up, top, down = self.transfered_tree.path(node, right_neighbor)
                 if up and down:
@@ -441,7 +450,6 @@ class Sentence_Reduction(object):
                     B_node = self.transfered_tree.find_node_by_id(down[0])
                     self.transfered_tree.insert_between(node, A_node, B_node)
 
-    # todo: use name entity to help flatting the tree
     # Take a transfered tree and flat it
     def flat_tree(self):
         self.flatten_tree = self.transfered_tree.get_copy()
@@ -589,3 +597,22 @@ class Sentence_Reduction(object):
 
 
 
+# Construct tree from sentence
+def parse_info(sentence):
+    doc = nlp(sentence)
+
+    heads = [index + item[0] for index, item in enumerate(doc.to_array([HEAD]))]
+
+    nodes = [{u"form": token.orth_,
+              u"head_word_index": 0,
+              u"word": [{u"id": current_id,
+                         # u"dep": doc[current_id].dep_,
+                         u"tag": token.tag_,
+                         u"form": token.orth_,
+                         u"stem": token.lemma_
+                         }],
+              u"edge": {u"parent_id": parent_id, u"label": doc[current_id].dep_}
+              }
+             for current_id, (token, parent_id) in enumerate(zip(doc, heads))]
+
+    return [Tree_node(node) for node in nodes]
